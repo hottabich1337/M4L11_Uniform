@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.entity.RegionEntity;
+import org.example.entity.Table1Entity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -16,15 +17,15 @@ public class Example1 {
         Session session = sessionFactory.openSession();
 
         // TRANSIENT
-        RegionEntity regionEntity = new RegionEntity();
+        Table1Entity table1Entity = new Table1Entity();
 
         try (session) {
             session.beginTransaction();
             SessionStatePrinter.printState(session);
             // PERSISTENT (MANAGED)
-            regionEntity.setRegionDescription("regionDescription");
-            session.persist(regionEntity);
-            System.out.println(regionEntity);
+            table1Entity.setName("Name");
+            session.persist(table1Entity);
+            System.out.println(table1Entity);
             SessionStatePrinter.printState(session);
             session.flush();
         }

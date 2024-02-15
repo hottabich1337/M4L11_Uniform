@@ -3,7 +3,7 @@ package org.example.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "region", schema = "public", catalog = "MrSQL")
+@Table(name = "Region", schema = "public", catalog = "MrSQL")
 public class RegionEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -11,7 +11,7 @@ public class RegionEntity {
     private short regionId;
     @Basic
     @Column(name = "region_description")
-    private Object regionDescription;
+    private String regionDescription;
 
     public short getRegionId() {
         return regionId;
@@ -25,7 +25,7 @@ public class RegionEntity {
         return regionDescription;
     }
 
-    public void setRegionDescription(Object regionDescription) {
+    public void setRegionDescription(String regionDescription) {
         this.regionDescription = regionDescription;
     }
 
