@@ -1,6 +1,5 @@
 package org.example;
 
-import org.example.entity.RegionEntity;
 import org.example.entity.Table1Entity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -10,7 +9,7 @@ public class Example1 {
     public static void main(String[] args) {
 
         SessionFactory sessionFactory = new Configuration()
-                .addAnnotatedClass(RegionEntity.class)
+                .addAnnotatedClass(Table1Entity.class)
                 .configure()
                 .buildSessionFactory();
 
