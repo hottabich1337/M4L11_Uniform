@@ -7,15 +7,12 @@
     <session-factory>
         <property name="connection.driver_class">org.postgresql.Driver</property>
         <property name="connection.url">jdbc:postgresql://localhost:5432/MrSQL</property>
-        <property name="connection.username">postgres</property>
-        <property name="connection.password">123</property>
-
-
+        <property name="connection.username">test</property>
+        <property name="connection.password">test</property>
         <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
-
         <property name="show_sql">true</property>
         <property name="hbm2ddl.auto">validate</property>
-        <mapping class="org.example.entity.Table1Entity"/>
+        <mapping class="org.example.entity.TableEntity"/>
 
 
     </session-factory>

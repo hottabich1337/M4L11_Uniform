@@ -3,10 +3,10 @@ package org.example.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Table1", schema = "public", catalog = "MrSQL")
-public class Table1Entity {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+@Table(name = "Table1", schema = "public")
+public class TableEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
     @Basic
@@ -34,7 +34,7 @@ public class Table1Entity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Table1Entity that = (Table1Entity) o;
+        TableEntity that = (TableEntity) o;
 
         if (id != that.id) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;

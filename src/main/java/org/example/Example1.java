@@ -1,6 +1,6 @@
 package org.example;
 
-import org.example.entity.Table1Entity;
+import org.example.entity.TableEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -9,22 +9,22 @@ public class Example1 {
     public static void main(String[] args) {
 
         SessionFactory sessionFactory = new Configuration()
-                .addAnnotatedClass(Table1Entity.class)
+                .addAnnotatedClass(TableEntity.class)
                 .configure()
                 .buildSessionFactory();
 
         Session session = sessionFactory.openSession();
 
         // TRANSIENT
-        Table1Entity table1Entity = new Table1Entity();
+        TableEntity tableEntity = new TableEntity();
 
         try (session) {
             session.beginTransaction();
             SessionStatePrinter.printState(session);
             // PERSISTENT (MANAGED)
-            table1Entity.setName("Name");
-            session.persist(table1Entity);
-            System.out.println(table1Entity);
+            tableEntity.setName("Name");
+            session.persist(tableEntity);
+            System.out.println(tableEntity);
             SessionStatePrinter.printState(session);
             session.flush();
         }
